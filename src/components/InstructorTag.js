@@ -1,14 +1,12 @@
 import { GoToProfile, TagWrapper, Emoji, Name } from "./styles";
+import { Link } from "react-router-dom";
 
 const InstructorTag = ({ instructor, goTo }) => {
   const { emoji, name, slug } = instructor;
 
   return (
-    <div
-      onClick={() => {
-        goTo(`/instructors/${slug}`);
-      }}
-    >
+    <div>
+      <Link to={`/instructors/${slug}`}></Link>
       <TagWrapper>
         <Emoji>{emoji}</Emoji>
         <Name>{name}</Name>
